@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.i18n.reload" value="true" />
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<constant name="struts.serve.static" value="true" />
+	<constant name="struts.serve.static.browserCache" value="false" />
+	<constant name="struts.mapper.action.prefix.enabled" value="true" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+
+	<constant name="struts.multipart.maxSize" value="52428800" />
+
+	<constant name="struts.custom.i18n.resources" value="globalMessages" />
+	<constant name="struts.action.extension" value="action,," />
+	<constant name="struts.action.excludePattern" value="/rest/services/.*"/>
+
+	<!-- Necessary for Showcase because default includes org.apache.struts2.* -->
+	<constant name="struts.convention.exclude.packages"
+		value="org.apache.struts.*,org.springframework.web.struts.*,org.springframework.web.struts2.*,org.hibernate.*" />
+
+	<package name="appIntercept" extends="struts-default,tiles-default,json-default">
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+
+		<interceptors>
+			<interceptor name="noCacheIntercept"
+				class="com.nacreav.navarathrikolu.util.NoCacheInterceptor" />
+			<interceptor name="SessionIntercept"
+				class="com.nacreav.navarathrikolu.util.SessionInterceptor" />
+			<interceptor-stack name="basicStack">
+				<interceptor-ref name="prepare" />
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="token">
+					<param name="excludeMethods">*</param>
+				</interceptor-ref>
+				<interceptor-ref name="actionMappingParams" />
+				<interceptor-ref name="params">
+					<param name="excludeParams">dojo\..*,^struts\..*</param>
+				</interceptor-ref>
+				<interceptor-ref name="conversionError" />
+				<interceptor-ref name="validation" />
+				<interceptor-ref name="workflow" />
+			</interceptor-stack>
+			<interceptor-stack name="sessionCheckStack">
+				<interceptor-ref name="basicStack" />
+				<interceptor-ref name="SessionIntercept" />
+				<!-- <interceptor-ref name="fileUpload">
+					<param name="maximumSize">52428800</param>
+					<param name="contentType">application/octet-stream</param>
+				</interceptor-ref> -->
+			</interceptor-stack>
+			<interceptor-stack name="noCacheStack">
+				<interceptor-ref name="basicStack" />
+				<interceptor-ref name="noCacheIntercept" />
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="SessionCheckStack"></default-interceptor-ref>
+
+		<global-results>
+			<result name="SessionExpired" type="tiles">exception</result>
+			<result name="invalid.token" type="tiles">exception</result>
+			<result name="unhandledException" type="tiles">exception</result>
+			<result name="history" type="tiles">history</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="unhandledException" />
+		</global-exception-mappings>
+	</package>
+
+</struts>

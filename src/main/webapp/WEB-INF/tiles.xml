@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="commonLayout" template="/WEB-INF/jsp/common/commonLayout.jsp">
+		<put-attribute name="appName" value="NavarathriKolu.com" />
+		<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp" />
+	</definition>
+	
+	<definition name="dashboardLayout" template="/WEB-INF/jsp/common/dashboardLayout.jsp">
+		<put-attribute name="appName" value="NavarathriKolu.com" />
+		<put-attribute name="header" value="/WEB-INF/jsp/common/header.jsp" />
+	</definition>
+	
+	<definition name="login" template="/WEB-INF/jsp/pages/login.jsp"/>
+	
+	<definition name="dashboard" extends="dashboardLayout">
+		<put-attribute name="title" value="Dashboard" />
+		<put-attribute name="body" value="/WEB-INF/jsp/pages/dashboard.jsp" />
+	</definition>
+	
+	<definition name="stocksView" extends="commonLayout">
+		<put-attribute name="title" value="Stocks View" />
+		<put-attribute name="body" value="/WEB-INF/jsp/pages/stocks.jsp" />
+	</definition>
+	<definition name="stocksEdit" template="/WEB-INF/jsp/pages/stocksEdit.jsp" />
+	
+	<definition name="reportsView" extends="commonLayout">
+		<put-attribute name="title" value="Reports View" />
+		<put-attribute name="body" value="/WEB-INF/jsp/pages/reports.jsp" />
+	</definition>
+	
+	<definition name="commonAjax" template="/WEB-INF/jsp/common/commonAjax.jsp" />
+
+</tiles-definitions>

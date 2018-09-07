@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<Configuration>
+	<Appenders>
+		<Console name="STDOUT" target="SYSTEM_OUT">
+			<!-- <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %5p %tid /// 
+				[%t] %l : %m%n"/> -->
+			<!-- <PatternLayout pattern="%-6r [%15.15t] %-5p %30.30c %x - %m%n"/> -->
+			<PatternLayout
+				pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} {%-5r %-5tid [%X{sessionId}~%X{tracingId}]} [%15.15t] %5p %l - %m%n" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Logger name="com.opensymphony.xwork2" level="info" />
+		<Logger name="org.apache.struts2" level="info" />
+		<Logger name="org.springframework" level="info, debug" />
+		<Logger name="com.nacreav.navarathrikolu" level="all" />
+		<Root level="info">
+			<AppenderRef ref="STDOUT" />
+		</Root>
+	</Loggers>
+</Configuration>
