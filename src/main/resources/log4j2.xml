@@ -13,8 +13,9 @@
 	<Loggers>
 		<Logger name="com.opensymphony.xwork2" level="info" />
 		<Logger name="org.apache.struts2" level="info" />
+		<Logger name="org.springframework.jdbc" level="trace" />
 		<Logger name="org.springframework" level="info, debug" />
-		<Logger name="com.nacreav.navarathrikolu" level="all" />
+		<Logger name="com.nacreav.navarathrikolu" level="trace" />
 		<Root level="info">
 			<AppenderRef ref="STDOUT" />
 		</Root>
