@@ -24,8 +24,7 @@ public class StockService {
 	}
 	
 	public void updateProduct(StockBean bean) {
-		int productDtlCnt = dao.updateProductDtl(bean);
-		dao.updateProduct(bean, productDtlCnt);
+		dao.updateProduct(bean);
 	}
 	
 	public void deleteProduct(StockBean bean) {
