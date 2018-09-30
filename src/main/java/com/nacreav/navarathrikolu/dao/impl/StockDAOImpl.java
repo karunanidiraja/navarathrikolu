@@ -74,7 +74,7 @@ public class StockDAOImpl extends DBConnectionSupport implements StockDAO {
 		String amendId = "0";
 		String sold = "0";
 		if(StringUtils.isBlank(bean.getProductId())) {
-			bean.setProductId(getProductId());
+			//bean.setProductId(getProductId());
 		} else {
 			Map<String, Object> result = getNamedParameterJdbcTemplate().queryForMap(getQuery("GET_PRODUCT_NEW_AMEND_ID"), 
 					new BeanPropertySqlParameterSource(bean));
@@ -93,6 +93,9 @@ public class StockDAOImpl extends DBConnectionSupport implements StockDAO {
 	}
 	
 	public int updateProductDtl(StockBean bean) {
+		if(StringUtils.isBlank(bean.getProductId())) {
+			bean.setProductId(getProductId());
+		}
 		String sql = getQuery("INS_PRODUCT_DTL_MASTER");
 		int result = 0;
 		Object[] args = new String[7];
