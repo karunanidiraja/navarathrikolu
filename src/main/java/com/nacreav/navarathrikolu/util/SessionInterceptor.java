@@ -18,7 +18,7 @@ public class SessionInterceptor extends InterceptorSupport implements Intercepto
 		LOGGER.info("Enter");
 		Map<String, Object> session = actionInvocation.getInvocationContext().getSession();
 		LOGGER.info(" User Id - {}", (String)session.get("UserId"));
-		String result = session.get("UserId") == null ? "SessionExpired" : actionInvocation.invoke() ;
+		String result = session.get("UserId") == null ? "redirectLogout" : actionInvocation.invoke() ;
 		onResponse(actionInvocation);
 		LOGGER.info("Exit");
 		onDestroy(actionInvocation);

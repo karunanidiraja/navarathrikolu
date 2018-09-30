@@ -33,6 +33,7 @@ $(document).ready(function() {
 	
 	$('select').formSelect();
 	modal();
+	$('textarea').characterCounter();
 } );
 
 function modal() {
@@ -118,5 +119,6 @@ function ajaxFormSubmitInModal(formId, resultId, url) {
 
 function reInitFields() {
 	$('select').formSelect();
+	$('textarea').characterCounter();
 	M.updateTextFields();
 }

@@ -14,7 +14,11 @@
 			<s:textfield  placeholder="Doll Dimentions" name="productDtlDim[%{rowNum}]" id="productDtlDim[%{rowNum}]"/>
 			<label for="productDtlDim">Doll Dimention</label>
 		</div>
-		<div class="input-field col s3">
+		<div class="input-field col s1">
+			<s:textfield  placeholder="Doll Weight" name="productDtlWeight[%{rowNum}]" id="productDtlWeight[%{rowNum}]"/>
+			<label for="productDtlWeight">Doll Weight</label>
+		</div>
+		<div class="input-field col s2">
 			<s:select name="productDtlType[%{rowNum}]" id="productDtlType[%{rowNum}]" list="#{'1':'Clay', '2':'Papermache'}" />
 			<label for="productDtlType">Doll Type</label>
 		</div>

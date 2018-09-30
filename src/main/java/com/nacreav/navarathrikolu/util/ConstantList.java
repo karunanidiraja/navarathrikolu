@@ -1,6 +1,7 @@
 package com.nacreav.navarathrikolu.util;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,9 +11,11 @@ public final class ConstantList {
 		MENU_NAME, MENU_NAMESPACE, MENU_ACTION
 	};
 	private static List<Map<Keys, String>> menus = new ArrayList<>();
+	private static List<String> yearList;
 	
 	static {
 		setMenus();
+		setYearList();
 	}
 	
 	public static List<Map<Keys, String>> getMenus() {
@@ -52,5 +55,13 @@ public final class ConstantList {
 		menus.add(stocksView);
 		menus.add(reportsView);
 		menus.add(logout);
+	}
+	
+	public static List<String> getYearList() {
+		return yearList;
+	}
+	
+	private static void setYearList() {
+		yearList = Arrays.asList("2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020");
 	}
 }

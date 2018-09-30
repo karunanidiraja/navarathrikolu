@@ -16,7 +16,6 @@
 			        <tr>
 			        	<th class="dt-head-center"></th>
 			        	<th class="dt-head-center">Product Name</th>
-			        	<th class="dt-head-center">Quantity</th>
 			        	<th class="dt-head-center">Available</th>
 			        	<th class="dt-head-center">Sold</th>
 			        	<th class="dt-head-center">Damaged</th>
@@ -28,7 +27,6 @@
 			        <tr>
 						<th></th>
 						<th class="dt-head-center"> <input type="text" placeholder="Search Product Name" style="width: 90%"/> </th>
-						<th class="dt-head-center"> <input type="text" size="4" style="width: 90%"/> </th>
 						<th class="dt-head-center"> <input type="text" size="4" style="width: 90%"/> </th>
 						<th class="dt-head-center"> <input type="text" size="4" style="width: 90%"/> </th>
 						<th class="dt-head-center"> <input type="text" size="4" style="width: 90%"/> </th>
@@ -44,23 +42,20 @@
 					            <button class="btn waves-effect waves-light" type="button" onclick="editStock('${productsVar.PRODUCT_ID}')"> <s:property value="#productsVar.PRODUCT_NAME"/>
 					            	<i class="material-icons right">create</i>
 					            </button>
-					            </td>
-				            <td class="dt-body-center">
-				            	<s:property value="#productsVar.QUANTITY"/>
-				            </td>
+							</td>
 				            <td class="dt-body-center">
 				            	<s:property value="%{#productsVar.QUANTITY-#productsVar.SOLD_CNT-#productsVar.DAMAGED_CNT}"/>
 				            </td>
-				             <td class="dt-body-center">
+				            <td class="dt-body-center">
 				             	<s:property value="#productsVar.SOLD_CNT"/>
-				             </td>
-				             <td class="dt-body-center">
+				            </td>
+				            <td class="dt-body-center">
 				            	<s:property value="#productsVar.DAMAGED_CNT"/>
 				            </td>
 							<td class="dt-body-center">
 				             	<s:property value="#productsVar.PRODUCT_AMOUNT"/>
-				             </td>
-				             <td class="dt-body-center">
+				            </td>
+				            <td class="dt-body-center">
 				             	<a class="btn waves-effect waves-light red" onclick="loadLink('${pageContext.request.contextPath}/stocks/delete?productId=${productsVar.PRODUCT_ID}')">
 									<i class="material-icons">delete_forever</i>
 								</a>

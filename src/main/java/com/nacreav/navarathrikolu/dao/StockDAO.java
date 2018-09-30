@@ -9,7 +9,7 @@ public interface StockDAO {
 	List<Map<String, Object>> getProducts();
 	void editProduct(StockBean bean);
 	void editProductDtl(StockBean bean);
-	void updateProduct(StockBean bean);
-	void updateProductDtl(StockBean bean);
+	void updateProduct(StockBean bean, int productDtlCnt);
+	int updateProductDtl(StockBean bean);
 	void deleteProduct(StockBean bean);
 }

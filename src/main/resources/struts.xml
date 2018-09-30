@@ -71,6 +71,8 @@
 			<result name="invalid.token" type="tiles">exception</result>
 			<result name="unhandledException" type="tiles">exception</result>
 			<result name="history" type="tiles">history</result>
+			
+			<result name="redirectLogout" type="redirect">/logout</result>
 		</global-results>
 
 		<global-exception-mappings>

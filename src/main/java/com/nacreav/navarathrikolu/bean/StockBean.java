@@ -12,6 +12,17 @@ public class StockBean {
 	private String retailPrice;
 	private String quantity;
 	private String damagedCnt;
+	private String manufacturingType;
+	private String stockType;
+	private String stockLoc;
+	private String makerName;
+	private String makerLoc;
+	private String productYear;
+	private String productYearPrice;
+	
+	private String productType;
+	private String productDim;
+	private String shippingWeight;
 	
 	private String ajaxReqFrom;
 	private String rowNum;
@@ -19,7 +30,8 @@ public class StockBean {
 	private List<String> productDtlName;
 	private List<String> productDtlDesc;
 	private List<String> productDtlDim;
-	private List<String> productDtlType;
+	private List<String> productDtlWeight;
+	
 	
 	public String getProductId() {
 		return productId;
@@ -81,12 +93,6 @@ public class StockBean {
 	public void setProductDtlDim(List<String> productDtlDim) {
 		this.productDtlDim = productDtlDim;
 	}
-	public List<String> getProductDtlType() {
-		return productDtlType;
-	}
-	public void setProductDtlType(List<String> productDtlType) {
-		this.productDtlType = productDtlType;
-	}
 	public String getAjaxReqFrom() {
 		return ajaxReqFrom;
 	}
@@ -110,6 +116,72 @@ public class StockBean {
 	}
 	public void setDamagedCnt(String damagedCnt) {
 		this.damagedCnt = damagedCnt;
+	}
+	public List<String> getProductDtlWeight() {
+		return productDtlWeight;
+	}
+	public void setProductDtlWeight(List<String> productDtlWeight) {
+		this.productDtlWeight = productDtlWeight;
+	}
+	public String getStockType() {
+		return stockType;
+	}
+	public void setStockType(String stockType) {
+		this.stockType = stockType;
+	}
+	public String getStockLoc() {
+		return stockLoc;
+	}
+	public void setStockLoc(String stockLoc) {
+		this.stockLoc = stockLoc;
+	}
+	public String getMakerName() {
+		return makerName;
+	}
+	public void setMakerName(String makerName) {
+		this.makerName = makerName;
+	}
+	public String getMakerLoc() {
+		return makerLoc;
+	}
+	public void setMakerLoc(String makerLoc) {
+		this.makerLoc = makerLoc;
+	}
+	public String getProductYear() {
+		return productYear;
+	}
+	public void setProductYear(String productYear) {
+		this.productYear = productYear;
+	}
+	public String getProductYearPrice() {
+		return productYearPrice;
+	}
+	public void setProductYearPrice(String productYearPrice) {
+		this.productYearPrice = productYearPrice;
+	}
+	public String getShippingWeight() {
+		return shippingWeight;
+	}
+	public void setShippingWeight(String shippingWeight) {
+		this.shippingWeight = shippingWeight;
+	}
+	public String getManufacturingType() {
+		return manufacturingType;
+	}
+	public void setManufacturingType(String manufacturingType) {
+		this.manufacturingType = manufacturingType;
+	}
+	public String getProductType() {
+		return productType;
+	}
+	public void setProductType(String productType) {
+		this.productType = productType;
+	}
+	public String getProductDim() {
+		return productDim;
+	}
+	public void setProductDim(String productDim) {
+		this.productDim = productDim;
 	}
 	
 }
